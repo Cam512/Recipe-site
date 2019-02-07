@@ -14,13 +14,12 @@ import Recipe from './models/Recipe';
  * - Shopping list object
  * - Liked recipes
  */
-
 const state = {};
-window.state = state;
 
 /**
  * SEARCH CONTROLLLER
  */
+
 const controlSearch = async () => {
     //1) Get query from view
     const query = searchView.getInput();
@@ -62,14 +61,12 @@ elements.searchResPages.addEventListener('click', e => {
     }
 });
 
-
 /**
  * RECIPE CONTROLLER
  */
 const controlRecipe = async () => { 
     // Get ID from url
     const id = window.location.hash.replace('#', '');
-    console.log(id);
 
     if (id) {
         // Prepare UI for changes
@@ -111,6 +108,7 @@ const controlRecipe = async () => {
 /**
  * LIST CONTROLLER
  */
+
 const controlList = () => {
     // Create a new list IF there is none yet
     if (!state.list) state.list = new List();
@@ -207,5 +205,3 @@ elements.recipe.addEventListener('click', e => {
         controlLike();
     }
 });
-
-window.l = new List();
